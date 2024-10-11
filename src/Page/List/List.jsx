@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './List.css';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function List() {
     const [list, setList] = useState([]);
@@ -20,29 +22,20 @@ function List() {
     };
 
     return (
-        <div className='list-container'>
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Body</th>
-                        <th>Add</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {list.map((item) => (
-                        <tr key={item.id}>
-                            <td>{item.id}</td>
-                            <td>{item.title}</td>
-                            <td>{item.body}</td>
-                            <td>
-                                <button onClick={() => handleClick(item.id)} className='btn btn-success'>View</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className='card-container'>
+            {list.map((item) => (
+                <Card key={item.id} className='custom-card'>
+                    <Card.Img variant="top" className='img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmkp9a2rrD1Sskb9HLt5mDaTt4QaIs8CcBg&s" />
+                    <Card.Body>
+                        <h3>{item.id}</h3>
+                        <Card.Title>{item.title}</Card.Title>
+                        <Card.Text>
+                            {item.body}
+                        </Card.Text>
+                        <Button variant="primary" onClick={() => handleClick(item.id)} className='btnview btn btn-success'>View</Button>
+                    </Card.Body>
+                </Card>
+            ))}
         </div>
     );
 }

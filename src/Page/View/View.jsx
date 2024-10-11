@@ -12,8 +12,10 @@ function View() {
 
     const hadleback = () =>{
     navigate('/list')
+    } 
+    const handlenext = () =>{
+        navigate('/chat')
     }
-
     useEffect(() => {
         const fetchPostData = async () => {
             try {
@@ -50,6 +52,7 @@ function View() {
                 <p>Loading...</p>
             )}
             <button onClick={hadleback} className='backd'>Back</button>
+            <button className='btnb' onClick={handlenext}>Next</button>
         </div>
     );
 }

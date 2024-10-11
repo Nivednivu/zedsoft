@@ -1,13 +1,39 @@
- table, thead, tbody,tr,th  ,td{
-    margin: auto;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
     padding: 20px;
-    text-align: center;
-    border: 2px solid black;
-
 }
-.list-container{
-    margin-top: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
 
+.custom-card {
+    width: 100%;
+    transition: 1.2s;
+}
+.custom-card:hover{
+    transform: scale(1.05);
+}
+.btnview{
+transform: scale(1.2s);
+}
+.btnview:hover{
+    transition: 1.02;
+    background-color: blue;
+}
+.img{
+    width: 50px;
+    transition: 1.2s;
+}
+.img:hover{
+    transform: scale(1.2);
+}
+@media screen and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; 
+    }
 }
