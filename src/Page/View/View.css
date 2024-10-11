@@ -1,0 +1,15 @@
+.view{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.backd{
+    background-color: green;
+    color: white;
+    margin-left: 40%;
+    border-radius: 8px;
+}
+.backd:hover{
+    background-color: rgb(207, 111, 21);
+}
